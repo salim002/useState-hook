@@ -10,7 +10,9 @@ function App() {
       {user.map((item, index)=>{
         return <div key={index}>{item}</div>;
       })}
-    
+      <div>
+        <button onClick={()=>setUser([...user, 6])} >Change Value</button>
+      </div>
     </div>
 
   );
