@@ -19,7 +19,7 @@ function App() {
     <div className="App"> 
       Home Page {value}
       <div>
-        <button onClick={changeValue}>Change Value</button>
+        <button onClick={()=>setvalue((state)=>state+1)} >Change Value</button>
       </div>
     
     </div>
