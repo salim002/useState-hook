@@ -7,19 +7,19 @@ import {useState} from "react";
 
 function App() {
   const [value, setvalue] = useState(10);
+  const changeValue = ()=>{
+    if(value<15){
+      setvalue(value+1);
+    }
+    else{
+      setvalue(10);
+    }
+  }
   return (
     <div className="App"> 
       Home Page {value}
       <div>
-        <button onClick={()=>{
-          if(value<15){
-            setvalue(value+1);
-          }
-          else{
-            setvalue(10);
-          }
-          // console.log(value);
-        }}>Change Value</button>
+        <button onClick={changeValue}>Change Value</button>
       </div>
     
     </div>
