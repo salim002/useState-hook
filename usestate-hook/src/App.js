@@ -3,13 +3,30 @@ import {useState} from "react";
 
 
 function App() {
-  const [counter, setCounter] = useState(0);
+  const [input, setInput] = useState({
+    name: "",
+    email: "",
+    password: ""
+  });
+
+  const handleSubmit = (e)=>{
+    e.preventDefault();
+    alert(JSON.stringify(input));
+  }
+
   return (
+
     <div className="App"> 
-      <div>{counter}</div>
-      <div><button onClick={()=>setCounter(counter+1)}> + </button></div>
-      <div><button onClick={()=>setCounter(counter-1)}> - </button></div>
-      <div><button onClick={()=>setCounter(0)}>Reset</button></div>
+
+      <form onSubmit={handleSubmit}>
+        <input value={input.name} type="text" placeholder="Enter your name" name="name" id=""
+         onChange={(e)=>setInput({...input, [e.target.name]: e.target.value})}/>
+        <input value={input.email} type="text" placeholder="Enter your email" name="email" id=""
+         onChange={(e)=>setInput({...input, [e.target.name]: e.target.value})}/>
+        <input value={input.password} type="password" placeholder="Enter your password" name="password" id=""
+         onChange={(e)=>setInput({...input, [e.target.name]: e.target.value})}/>
+        <input type="submit" value="Submit" />
+      </form>
 
     </div>
 
