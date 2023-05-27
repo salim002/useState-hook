@@ -7,8 +7,8 @@ function App() {
   return (
     <div className="App"> 
       Home Page
-      {user.map((item)=>{
-        return <div>{item}</div>;
+      {user.map((item, index)=>{
+        return <div key={index}>{item}</div>;
       })}
     
     </div>
